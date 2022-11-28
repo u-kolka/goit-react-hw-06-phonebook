@@ -7,7 +7,6 @@ const Filter = () => {
 
     const changeFilterField = event => {
         const flterFieldValue = event.currentTarget.value.toLowerCase();
-        // console.log(flterFieldValue);
         dispatch(setFilter(flterFieldValue));
     };
 

@@ -9,9 +9,8 @@ const getFilteredContacts = (contacts, filterValue) => {
   };
 
 const ContactList = () => {
-  const contacts = useSelector(state => state.contacts);
+  const contacts = useSelector(state => state.contacts.contacts);
   const filterValue = useSelector(state => state.filter);
-  // const contactsArray = Object.values(contacts);
   const filteredContacts = getFilteredContacts(contacts, filterValue);
 
   return (
@@ -20,5 +19,6 @@ const ContactList = () => {
         <ContactListItem key={item.id} name={item.name} number={item.number} contactID={item.id} />)}
     </ul>)
 }
+
 
 export default ContactList;

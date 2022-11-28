@@ -1,13 +1,12 @@
-import { nanoid } from 'nanoid'
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { nanoid } from 'nanoid';
 import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from "react-redux";
 import { addContact } from 'redux/contactsSlice';
 import css from './ContactForm.module.css'
 
 function ContactForm() {
   const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts);
+  const contacts = useSelector(state => state.contacts.contacts);
   const nameInputId = nanoid(7);
   const numberInputId = nanoid(7);
 
@@ -16,7 +15,6 @@ function ContactForm() {
     const form = event.target;
 
     for (let contact of contacts) {
-        // console.log(contact.name)
       if (form.elements.name.value.toLowerCase() === contact.name.toLowerCase()) {
         return toast.info(form.elements.name.value + ' is already in contacts!', {
           icon: "🚀"

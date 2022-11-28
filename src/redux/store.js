@@ -1,14 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { contactsReducer, contactsSlice } from "./contactsSlice";
 import { filtersReducer } from "./filterSlice";
+import { persistedReducer } from "./contactsSlice";
 import {persistStore, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER} from 'redux-persist';
-// import storage from 'redux-persist/lib/storage' // defaults to localStorage for web
  
- 
-
 export const store = configureStore({
     reducer: {
-        contacts: contactsReducer,
+        contacts: persistedReducer,
         filter: filtersReducer,
     },
       middleware(getDefaultMiddleware) {
@@ -20,4 +17,4 @@ export const store = configureStore({
     },
 });
 
-// export const persistor = persistStore(store);
+export const persistor = persistStore(store);
