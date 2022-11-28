@@ -32,7 +32,6 @@ function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit}>
-            
       <label className={css.form__label} htmlFor={nameInputId}> Name
         <input
           type="text"
@@ -57,6 +56,5 @@ function ContactForm() {
     </form>
   );
 }
-
 
 export default ContactForm;
