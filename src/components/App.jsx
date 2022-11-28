@@ -1,13 +1,10 @@
-import { useState, useEffect } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { nanoid } from 'nanoid'
 import ContactForm from './ContactForm/ContactForm'
 import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 
 const App = () => {
-
   // const [contacts, setContacts] = useState(
   //   JSON.parse(localStorage.getItem('contacts')) ?? [
   //   { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
@@ -50,17 +47,16 @@ const App = () => {
   // const normalizedFilter = filterField.toLowerCase();
   // const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(normalizedFilter));
 
-    return (
-      <div>
-        <h1>Phonebook</h1>
-        <ContactForm />
-
-        <h2>Contacts</h2>
-        <Filter />
-        <ContactList />
-        <ToastContainer autoClose={3000} theme={"light"} icon={false} />
-      </div>
-    )
+  return (
+    <div>
+      <h1>Phonebook</h1>
+      <ContactForm />
+      <h2>Contacts</h2>
+      <Filter />
+      <ContactList />
+      <ToastContainer autoClose={3000} theme={"light"} icon={false} />
+    </div>
+  );
 }
 
 export default App;
